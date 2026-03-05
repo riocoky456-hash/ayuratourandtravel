@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ayura Tour and Travel</title>
+
+<style>
+
+body{
+font-family: Arial;
+margin:0;
+background:#f5f5f5;
+}
+
+header{
+background:#004e92;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+nav{
+background:#003366;
+padding:12px;
+text-align:center;
+}
+
+nav a{
+color:white;
+margin:15px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.hero{
+background:url("https://images.unsplash.com/photo-1537996194471-e657df975ab4");
+background-size:cover;
+padding:120px;
+color:white;
+text-align:center;
+}
+
+.hero h1{
+font-size:40px;
+}
+
+.btn{
+background:#f39c12;
+color:white;
+padding:12px 25px;
+border-radius:6px;
+text-decoration:none;
+}
+
+.container{
+padding:40px;
+}
+
+.card{
+background:white;
+padding:20px;
+margin:20px 0;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+button{
+background:#25d366;
+color:white;
+padding:12px;
+border:none;
+border-radius:5px;
+}
+
+input,select{
+width:100%;
+padding:10px;
+margin:10px 0;
+}
+
+footer{
+background:#003366;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Ayura Tour and Travel</h1>
+<p>Paket Wisata Bali • Sewa Mobil • Sewa Motor</p>
+</header>
+
+<nav>
+<a href="#">Home</a>
+<a href="#paket">Paket Wisata Bali</a>
+<a href="#mobil">Sewa Mobil</a>
+<a href="#motor">Sewa Motor</a>
+<a href="#booking">Booking</a>
+</nav>
+
+<section class="hero">
+<h1>Liburan Seru di Bali</h1>
+<p>Jelajahi Bali bersama Ayura Tour</p>
+<br>
+<a class="btn" href="#booking">Booking Sekarang</a>
+</section>
+
+<div class="container">
+
+<h2 id="paket">Paket Wisata Bali</h2>
+
+<div class="card">
+<h3>Paket Bali 3 Hari 2 Malam</h3>
+<p>Kunjungan ke Kuta, Tanah Lot, Ubud</p>
+<p>Harga: Rp2.500.000 / orang</p>
+<button onclick="booking('Paket Bali 3 Hari 2 Malam')">Booking</button>
+</div>
+
+<div class="card">
+<h3>Paket Nusa Penida Tour</h3>
+<p>Trip sehari ke Nusa Penida</p>
+<p>Harga: Rp900.000 / orang</p>
+<button onclick="booking('Paket Nusa Penida Tour')">Booking</button>
+</div>
+
+<h2 id="mobil">Sewa Mobil</h2>
+
+<div class="card">
+Avanza – Rp350.000 / hari
+<button onclick="booking('Sewa Mobil Avanza')">Booking</button>
+</div>
+
+<div class="card">
+Innova – Rp500.000 / hari
+<button onclick="booking('Sewa Mobil Innova')">Booking</button>
+</div>
+
+<div class="card">
+Hiace – Rp1.200.000 / hari
+<button onclick="booking('Sewa Mobil Hiace')">Booking</button>
+</div>
+
+<h2 id="motor">Sewa Motor</h2>
+
+<div class="card">
+Beat – Rp80.000 / hari
+<button onclick="booking('Sewa Motor Beat')">Booking</button>
+</div>
+
+<div class="card">
+Vario – Rp100.000 / hari
+<button onclick="booking('Sewa Motor Vario')">Booking</button>
+</div>
+
+<div class="card">
+NMAX – Rp150.000 / hari
+<button onclick="booking('Sewa Motor NMAX')">Booking</button>
+</div>
+
+<h2 id="booking">Form Booking</h2>
+
+<input type="text" id="nama" placeholder="Nama Anda">
+
+<input type="text" id="wa" placeholder="Nomor WhatsApp Anda">
+
+<select id="layanan">
+<option>Pilih Layanan</option>
+<option>Paket Wisata Bali</option>
+<option>Sewa Mobil</option>
+<option>Sewa Motor</option>
+</select>
+
+<input type="date" id="tanggal">
+
+<button onclick="kirimWA()">Kirim Booking</button>
+
+</div>
+
+<footer>
+
+<p>© 2026 Ayura Tour and Travel</p>
+<p>Booking via WhatsApp</p>
+
+</footer>
+
+<script>
+
+function booking(layanan){
+
+var url="https://wa.me/6281230488208?text=Halo Ayura Tour,%0ASaya ingin booking "+layanan;
+
+window.open(url);
+
+}
+
+function kirimWA(){
+
+var nama=document.getElementById("nama").value;
+var wa=document.getElementById("wa").value;
+var layanan=document.getElementById("layanan").value;
+var tanggal=document.getElementById("tanggal").value;
+
+var pesan="Halo Ayura Tour,%0ASaya ingin booking:%0A%0A"+
+"Nama: "+nama+"%0A"+
+"WhatsApp: "+wa+"%0A"+
+"Layanan: "+layanan+"%0A"+
+"Tanggal: "+tanggal;
+
+window.open("https://wa.me/6281230488208?text="+pesan);
+
+}
+
+</script>
+
+</body>
+</html>
